@@ -1,0 +1,4 @@
+<footer class="fixed bottom-0 w-full bg-slate-200 p-4">
+	<a class="text-2xl text-blue-600 underline" href="mailto:memberlist@memberlist.com">Contact us</a>
+	<p>Copyright Henrik 2023</p>
+</footer>
