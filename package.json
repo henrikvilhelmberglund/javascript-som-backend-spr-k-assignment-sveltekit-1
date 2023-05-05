@@ -26,6 +26,7 @@
 		"@unocss/preset-web-fonts": "^0.50.6",
 		"@unocss/transformer-directives": "^0.50.6",
 		"commit-and-tag-version": "^11.0.0",
+		"mongodb": "^5.4.0",
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.8.1",
 		"prettier-plugin-tailwindcss": "^0.2.2",
