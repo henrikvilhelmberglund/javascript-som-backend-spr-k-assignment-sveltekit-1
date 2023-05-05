@@ -22,3 +22,38 @@ export async function load({ params }) {
 		member: member,
 	};
 }
+
+/** @type {import('./$types').Actions} */
+export const actions = {
+	updateMember: async ({ cookies, request }) => {
+		const data = await request.formData();
+
+		// console.log("request", request);
+		// console.log("data", data);
+		console.log("data", ...data);
+		// console.log(data[0]);
+
+		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
+
+		const body = {
+			name,
+			email,
+			phone,
+			date,
+			character,
+		};
+
+		const id = data.get("id");
+		const member = await membersCollection.findOne({
+			_id: new ObjectId(id),
+		});
+		console.log(member);
+
+		await membersCollection.updateOne(member, { $set: body });
+		// res.json(members);
+		return {
+			updated: true,
+			updatedMember: name,
+		};
+	},
+};
