@@ -4,7 +4,7 @@
 </script>
 
 <main class="[&>*]:m-4">
-Hello
+	<p>Index here</p>
 </main>
 
 <Footer />
