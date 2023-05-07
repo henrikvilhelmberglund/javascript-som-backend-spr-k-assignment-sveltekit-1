@@ -9,7 +9,7 @@
 	<div
 		class="font-inknut from-slate-100 via-amber-400 to-orange-600 p-4 text-base text-transparent md:text-xl [&>*]:bg-gradient-to-b [&>*]:bg-clip-text">
 		<p>
-			The Fellowship is club focused on playing table top role playing games. We are also creating
+			The Fellowship is a club focused on playing table top role playing games. We are also creating
 			our own TRPG <span
 				class="font-almendra bg-gradient-to-b from-current via-emerald-600 to-indigo-200 bg-clip-text px-1 text-4xl italic">
 				Vaults and Ducks</span
@@ -22,7 +22,7 @@
 			>Join our adventure!</a>
 		<p>
 			If you would like to join us, feel free to add yourself as a member with your information and
-			a short description for your character.
+			a short description of your character.
 		</p>
 	</div>
 </main>
