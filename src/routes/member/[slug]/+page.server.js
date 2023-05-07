@@ -16,7 +16,7 @@ export async function load({ params }) {
 	let member = await membersCollection.findOne({ _id: id });
 	member._id = member._id.toString();
 
-	console.log(member);
+	console.log("Ran load function in dynamic route to load the following member: ", member);
 
 	return {
 		member: member,
@@ -30,7 +30,7 @@ export const actions = {
 
 		// console.log("request", request);
 		// console.log("data", data);
-		console.log("data", ...data);
+		// console.log("data", ...data);
 		// console.log(data[0]);
 
 		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
@@ -47,7 +47,7 @@ export const actions = {
 		const member = await membersCollection.findOne({
 			_id: new ObjectId(id),
 		});
-		console.log(member);
+		console.log("Ran updateMember with the following: ", member);
 
 		await membersCollection.updateOne(member, { $set: body });
 		// res.json(members);
