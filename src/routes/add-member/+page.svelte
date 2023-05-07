@@ -1,5 +1,5 @@
 <script>
-	let debug = 1;
+	let debug = false;
 	let name;
 	let email;
 	let phone;

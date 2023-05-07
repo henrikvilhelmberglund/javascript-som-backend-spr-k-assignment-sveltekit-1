@@ -1,7 +1,4 @@
 <script>
-	import { base } from "$app/paths";
-	import Footer from "$lib/Footer.svelte";
-	import { onMount } from "svelte";
 </script>
 
 <main class="flex-1 [&>*]:m-4">
@@ -32,7 +29,6 @@
 
 <style>
 	h1,
-	h2,
 	a {
 		filter: drop-shadow(4px 2px 2px #000);
 	}
