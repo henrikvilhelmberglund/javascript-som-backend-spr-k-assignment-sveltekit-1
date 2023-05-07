@@ -1,5 +1,4 @@
 <script>
-	import { base } from "$app/paths";
 	import Footer from "$lib/Footer.svelte";
 	import Updated from "$lib/Updated.svelte";
 
@@ -34,7 +33,9 @@
 			</div>
 		{/each}
 	{:else}
-		No members :(
+  <p class="text-lg text-yellow-500 font-inknut">
+		There are currently no members.
+  </p>
 	{/if}
 
 	{#if form?.added}

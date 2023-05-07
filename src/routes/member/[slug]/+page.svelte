@@ -2,8 +2,8 @@
 	import Updated from "$lib/Updated.svelte";
 	import { fly } from "svelte/transition";
 	export let data;
-	const { name, email, phone, date, character } = data.member;
 	export let form;
+	const { name, email, phone, date, character } = data.member;
 </script>
 
 <main class="flex flex-1 flex-col justify-center pb-44 md:flex-row [&>*]:m-4">
@@ -12,7 +12,7 @@
 		class="flex flex-col items-start justify-between gap-4 rounded-sm bg-[url('/paper.jpg')] p-12">
 		<h2 class="font-almendra text-5xl">{name ?? "unknown name"}</h2>
 		<div class="font-inknut flex flex-wrap gap-4 text-xl">
-			<a class="text-blue-700" href="mailto:{email}">{email ?? "unknown email"}</a>
+			<a class="text-blue-700 w-fit" href="mailto:{email}">{email ?? "unknown email"}</a>
 			<p class="">Phone: {phone ?? "unknown phone"}</p>
 			<p class="">DOB: {date ?? "unknown date"}</p>
 			<p class="pt-8">Character introduction:</p>
