@@ -1,12 +1,31 @@
 <script>
+	import Updated from "$lib/Updated.svelte";
+	import { fly } from "svelte/transition";
 	export let data;
 	const { name, email, phone, date, character } = data.member;
 	export let form;
 </script>
 
-<div class="flex flex-row justify-between">
+<main class="flex flex-1 flex-col justify-center pb-44 md:flex-row [&>*]:m-4">
+	<div
+		in:fly={{ y: -100 }}
+		class="flex flex-col items-start justify-between gap-4 rounded-sm bg-[url('/paper.jpg')] p-12">
+		<h2 class="font-almendra text-5xl">{name ?? "unknown name"}</h2>
+		<div class="font-inknut flex flex-wrap gap-4 text-xl">
+			<a class="text-blue-700" href="mailto:{email}">{email ?? "unknown email"}</a>
+			<p class="">Phone: {phone ?? "unknown phone"}</p>
+			<p class="">DOB: {date ?? "unknown date"}</p>
+			<p class="pt-8">Character introduction:</p>
+			<p class="w-96 overflow-x-auto overflow-y-hidden whitespace-normal italic">
+				{character ?? "unknown character"}
+			</p>
+		</div>
+		<div>
+			<!-- empty -->
+		</div>
+	</div>
 	<form action="?/updateMember" method="POST">
-		<div class="flex w-96 flex-col gap-4">
+		<div class="font-inknut flex flex-col gap-4 md:w-96">
 			<input
 				required
 				type="text"
@@ -51,28 +70,21 @@
 				>Update info</button>
 		</div>
 	</form>
-
-	<div class="flex flex-col items-start justify-center gap-4 rounded-2xl bg-amber-100 p-12">
-		<h2 class="text-5xl">{name ?? "unknown name"}</h2>
-		<p class="text-2xl text-blue-700">{email ?? "unknown email"}</p>
-		<p class="text-2xl">{phone ?? "unknown phone"}</p>
-		<p class="text-2xl">{date ?? "unknown date"}</p>
-		<p class="text-2xl">{character ?? "unknown character"}</p>
-	</div>
 	<form action="/members?/delete" method="POST">
-		<p>Delete user</p>
+		<p class="text-red-500">Delete user</p>
 		<button
 			name="id"
 			value={data.member._id}
 			id="deleteButton"
 			class="rounded bg-red-500 p-4 text-2xl hover:bg-red-400">❌</button>
 	</form>
-</div>
+</main>
 
 {#if form?.updated}
 	<!-- this message is ephemeral; it exists because the page was rendered in
        response to a form submission. it will vanish if the user reloads -->
-	<p>Successfully updated {form.updatedMember}</p>
+	<Updated input={form.updatedMember} text="Successfully updated" />
+	<!-- <p>Successfully updated {form.updatedMember}</p> -->
 {/if}
 
 <style>

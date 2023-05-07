@@ -15,9 +15,9 @@
 	}
 </script>
 
-<main class="[&>*]:m-4">
+<main class="[&>*]:m-4 flex-1">
 	<form action="members?/addMember" method="POST">
-		<div class="flex w-96 flex-col gap-4">
+		<div class="flex flex-col gap-4 md:w-96 font-inknut">
 			<input
 				required
 				type="text"

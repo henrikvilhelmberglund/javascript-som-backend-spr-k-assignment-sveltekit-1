@@ -1,24 +1,25 @@
 <script>
 	import { base } from "$app/paths";
 	import Footer from "$lib/Footer.svelte";
+	import Updated from "$lib/Updated.svelte";
 
 	export let data;
 	export let form;
 </script>
 
-<form action="?/sort" method="post">
-	{#each data.sortAlternatives as alternative}
-		<button class="mx-2 rounded bg-blue-400 p-2 hover:bg-blue-300" name={alternative}
-			>{alternative}</button>
-	{/each}
-</form>
-
-<main class="[&>*]:m-4">
+<main class="flex-1 [&>*]:m-4">
+	<form action="?/sort" method="post">
+		{#each data.sortAlternatives as alternative}
+			<button
+				class="font-inknut mx-2 rounded bg-emerald-700 p-2 hover:bg-emerald-500"
+				name={alternative}>{alternative}</button>
+		{/each}
+	</form>
 	{#if data.members.length}
 		{#each data.members as member}
 			<div class="flex flex-row gap-10">
 				<a
-					class="flex h-16 w-64 flex-col items-center justify-center rounded-lg text-2xl shadow-xl hover:outline hover:outline-1 hover:outline-black"
+					class="font-inknut flex h-16 w-64 flex-col items-center justify-center rounded-lg bg-yellow-300 text-2xl shadow-xl hover:outline hover:outline-1 hover:outline-black"
 					href="/member/{member._id}">
 					{member.name}
 				</a>
@@ -39,13 +40,15 @@
 	{#if form?.added}
 		<!-- this message is ephemeral; it exists because the page was rendered in
            response to a form submission. it will vanish if the user reloads -->
-		<p>Successfully added {form.addedMember}</p>
+		<Updated input={form.addedMember} text="Successfully added" />
+		<!-- <p>Successfully added {form.addedMember}</p> -->
 	{/if}
 
 	{#if form?.delete}
 		<!-- this message is ephemeral; it exists because the page was rendered in
-           response to a form submission. it will vanish if the user reloads -->
-		<p>Successfully deleted {form.deletedMember}</p>
+            response to a form submission. it will vanish if the user reloads -->
+		<Updated input={form.deletedMember} text="Successfully deleted" />
+		<!-- <p>Successfully deleted {form.deletedMember}</p> -->
 	{/if}
 </main>
 

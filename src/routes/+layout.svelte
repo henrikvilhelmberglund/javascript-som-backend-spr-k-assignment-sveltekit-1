@@ -1,18 +1,37 @@
 <script>
+	import { beforeUpdate, onMount } from "svelte";
 	import Footer2 from "$lib/Footer2.svelte";
 	import "@unocss/reset/antfu.css";
+	import { browser } from "$app/environment";
+	let currentRoute = "";
+	beforeUpdate(() => {
+		// if (browser) {
+		currentRoute = window.location.pathname;
+		console.log(currentRoute);
+		// }
+	});
+	const routes = { Home: "/", Members: "/members", "Add member": "/add-member" };
 </script>
 
-<header>
-	<nav class="bg-slate-300 p-2">
-		<a class="p-4 text-2xl text-blue-700 hover:text-blue-500" href="/">Home</a>
-		<a class="p-4 text-2xl text-blue-700 hover:text-blue-500" href="/members">Members</a>
-		<a class="p-4 text-2xl text-blue-700 hover:text-blue-500" href="/add-member"> Add member</a>
-	</nav>
-</header>
+<div class="min-h-screen bg-[url(/timothy-dykes-woE5Fc1HF1o-unsplash.jpg)] bg-cover">
+	<header>
+		<nav class="font-inknut p-2">
+			{#each Object.entries(routes) as [name, link]}
+				<a
+					class:!decoration-amber-500={currentRoute === link}
+					class="decoration-offset-6 p-4 pb-0 md:text-2xl text-yellow-500 underline decoration-transparent hover:text-yellow-400"
+					href={link}>{name}</a>
+			{/each}
+		</nav>
+	</header>
 
-<slot />
+	<slot />
 
-<Footer2 />
+	<Footer2 />
+</div>
 
-<style uno:preflights uno:safelist global></style>
+<style uno:preflights uno:safelist global>
+	[un-cloak] {
+		display: none;
+	}
+</style>
