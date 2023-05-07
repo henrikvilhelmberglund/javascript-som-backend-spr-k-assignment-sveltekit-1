@@ -15,9 +15,9 @@
 	}
 </script>
 
-<main class="[&>*]:m-4 flex-1">
+<main class="flex-1 [&>*]:m-4">
 	<form action="members?/addMember" method="POST">
-		<div class="flex flex-col gap-4 md:w-96 font-inknut">
+		<div class="font-inknut flex flex-col gap-4 md:w-96">
 			<input
 				required
 				type="text"
@@ -55,11 +55,13 @@
 				type="text"
 				rows="5"
 				class="outline-solid rounded p-2 outline-1 outline-black"
-				placeholder="A short introduction to your character"
+				placeholder="A short introduction of your character"
 				id="character"
 				bind:value={character}
 				name="character" />
-			<button class="rounded-lg bg-blue-500 p-4">Add member</button>
+			<button
+				class="hover:bg-white/15 rounded-lg border border-gray-200 bg-white/5 bg-clip-padding p-8 backdrop-blur-lg backdrop-filter"
+				>Add member</button>
 		</div>
 	</form>
 </main>
