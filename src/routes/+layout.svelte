@@ -1,5 +1,7 @@
 <script>
 	import "@unocss/reset/antfu.css";
+  import "@fontsource/almendra"
+  import "@fontsource/inknut-antiqua"
 	import { beforeUpdate } from "svelte";
 	import Footer2 from "$lib/Footer2.svelte";
 	import { onMount } from "svelte";
@@ -48,4 +50,10 @@
 {/if}
 
 <style uno:preflights uno:safelist global>
+	.test {
+		font-family: Inknut Antiqua;
+	}
+	.test2 {
+		font-family: Almendra;
+	}
 </style>

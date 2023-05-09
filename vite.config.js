@@ -245,7 +245,7 @@ export default defineConfig({
 				}),
 				presetHeroPatterns(),
 				presetWebFonts({
-					provider: "google", // default provider
+					provider: "none", // default provider
 					fonts: {
 						// these will extend the default theme
 						sans: "Roboto",
