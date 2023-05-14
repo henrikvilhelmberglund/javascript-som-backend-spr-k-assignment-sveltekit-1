@@ -1,11 +1,10 @@
 <script>
 	import { toNiceDate } from "$lib/helpers";
 
-	let debug = true;
+	let debug = false;
 	let name;
 	let email;
 	let phone;
-	let date;
 	let character;
 
 	if (debug) {
