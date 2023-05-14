@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.0.0](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/compare/v0.0.1...v1.0.0) (2023-05-14)
+
+
+### Features
+
+* :mag: add titles ([088251c](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/088251ce1810476f20782d8abbaf9cf0f0653bd5))
+* :sparkles: add toNiceDate function ([3ba14f4](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/3ba14f481edcbcf517a3f8089af6f7af63dda48f))
+* :sparkles: add SHOW_CONSOLE_LOGS ([e8dad0c](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/e8dad0c2a4d1b6dccbf1110a2911f833ef868ec9))
+* :package: update svelte ([c73f2dd](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/c73f2dd92e26315b39b686fab20b0c96697b100c))
+* :sparkles: use fontsource for the fonts ([fe682a6](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/fe682a6c42aeb1c97eca1b0b9e50ebcb272b8a28))
+* :sparkles: add loading spinner, wait until things are loaded before showing ([b1c69a9](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/b1c69a947eed9b0a82ffc99816074695264c1ff6))
+* :sparkles: prerender index ([73c337f](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/73c337fe5219c524dc6710511103307cbb95b069))
+* :bento: add fonts (not using yet) ([073be5d](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/073be5dac08e92c61cb80a36e7f587533a93caec))
+
+
+### Bug Fixes
+
+* :memo: replace README ([a3250e8](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/a3250e8d18d218282b5c5844c86acdae83250de2))
+* :lipstick: set block ([1673dc2](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/1673dc2fa2934527285c189d790ecd36ad447296))
+* :zap: set debug to false ([5e1fd27](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/5e1fd27f0f5409ee45a51ede47185b50b8ddc321))
+* :fire: remove safelist.js import ([2fd1b88](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/2fd1b88e64c66700eed5e63f857d5a52a2d64abe))
+* :bug: use data objects instead of strings ([cf03920](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/cf039201a36e2078d3595635b2b45b4797e6f269))
+* :fire: remove unused stuff to make things less confusing ([913a3d8](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/913a3d8fe66024d33dd2a21e9b1fda75a59f477c))
+* :lipstick: add missing flex ([3318d20](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/3318d2068351fa1b944f930a09f1a0b7636b48ce))
+* :bug: set the current date as the initial value ([9580c27](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/9580c27adebd58973405ba051394d05959c4524b))
+* :fire: hide console logs by default ([4f853f4](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/4f853f4b6c2cd660ce10e84c9e5c1813a2b6f2e3))
+* :zap: get sort type from searchParams instead and use in load function ([dc88a32](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/dc88a32872b1511c110fda8e6ec648e13078b8cd))
+* :bug: use actual date again ([92c074b](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/92c074beb4b01a6101e291e6ffeffff6a8eac4a2))
+* :art: use global variable on server instead of cookies, get value instead of name ([bb45b3e](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/bb45b3e8026e36a70787cf70dbe4f200226226d3))
+* :art: DRy ([7804d02](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/7804d02a18f77945ec309fb34319c94be47ee26f))
+* :lipstick: add missing flex-col ([2d7abeb](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/2d7abeb5f739ac7349e40da8a36009066b019eeb))
+* :bug: fix date ([c54695e](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/c54695e4107da89138f6fae83e0f5111191e3ec7))
+* :lipstick: "fix" shifting because of transition ([bbecc5a](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/bbecc5adc5d0014094a234d1f85d215e2e75d52f))
+* :lipstick: add missing classes ([b5ecdd0](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/b5ecdd0ee06e26fc6ad47baf930389640d21d5a5))
+* :bug: use tailwind reset ([36650d3](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/36650d3194d4c3ac595a4e45162a7c93f1649ed8))
+* :fire: remove unused objectid ([d2c54af](https://github.com/henrikvilhelmberglund/javascript-som-backend-spr-k-assignment-sveltekit-1/commit/d2c54afdb69e9d1f174d8322763d74201697ed6d))
+
 ## 0.0.1 (2023-05-07)
 
 
