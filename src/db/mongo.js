@@ -1,4 +1,4 @@
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient } from "mongodb";
 
 // ?  MongoDB init
 const client = new MongoClient("mongodb://127.0.0.1:27017");
