@@ -6,6 +6,10 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>Fellowship: List of members</title>
+</svelte:head>
+
 <main class="flex-1 [&>*]:m-4">
 	<form action="?/sort" method="post">
 		{#each data.sortAlternatives as alternative}

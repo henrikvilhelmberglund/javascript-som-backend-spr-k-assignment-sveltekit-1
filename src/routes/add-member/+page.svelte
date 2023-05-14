@@ -13,6 +13,11 @@
 	}
 </script>
 
+<svelte:head>
+  <title>Fellowship: Add member</title>
+</svelte:head>
+
+
 <main class="flex-1 [&>*]:m-4">
 	<form action="members?/addMember" method="POST">
 		<div class="font-inknut flex flex-col gap-4 md:w-96">

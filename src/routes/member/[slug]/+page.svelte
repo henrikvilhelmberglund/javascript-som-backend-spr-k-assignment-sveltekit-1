@@ -7,6 +7,11 @@
 	const { name, email, date, phone, character } = data.member;
 </script>
 
+<svelte:head>
+  <title>Fellowship: {name}'s info</title>
+</svelte:head>
+
+
 <main class="flex flex-1 flex-col justify-center pb-44 md:flex-row [&>*]:m-4">
 	<div
 		in:fly={{ y: -100 }}
