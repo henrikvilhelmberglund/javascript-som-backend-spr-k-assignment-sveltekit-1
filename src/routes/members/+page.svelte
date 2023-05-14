@@ -18,7 +18,7 @@
 		{#each data.members as member}
 			<div class="flex flex-row gap-10">
 				<a
-					class="font-inknut flex h-16 w-64 flex-col items-center justify-center rounded-lg bg-yellow-400 hover:bg-yellow-300 text-2xl shadow-xl hover:outline hover:outline-1 hover:outline-black"
+					class="font-inknut flex h-16 w-64 flex-col items-center justify-center rounded-lg bg-yellow-400 text-2xl shadow-xl hover:bg-yellow-300 hover:outline hover:outline-1 hover:outline-black"
 					href="/member/{member._id}">
 					{member.name}
 				</a>
@@ -33,9 +33,7 @@
 			</div>
 		{/each}
 	{:else}
-  <p class="text-lg text-yellow-500 font-inknut">
-		There are currently no members.
-  </p>
+		<p class="font-inknut text-lg text-yellow-500">There are currently no members.</p>
 	{/if}
 
 	{#if form?.added}

@@ -1,9 +1,10 @@
 <script>
 	import Updated from "$lib/Updated.svelte";
+	import { toNiceDate } from "$lib/helpers.js";
 	import { fly } from "svelte/transition";
 	export let data;
 	export let form;
-	const { name, email, phone, date, character } = data.member;
+	const { name, email, date, phone, character } = data.member;
 </script>
 
 <main class="flex flex-1 flex-col justify-center pb-44 md:flex-row [&>*]:m-4">
@@ -12,9 +13,9 @@
 		class="flex flex-col items-start justify-between gap-4 rounded-sm bg-[url('/paper.jpg')] p-12">
 		<h2 class="font-almendra text-5xl">{name ?? "unknown name"}</h2>
 		<div class="font-inknut flex flex-wrap gap-4 text-xl">
-			<a class="text-blue-700 w-fit" href="mailto:{email}">{email ?? "unknown email"}</a>
+			<a class="w-fit text-blue-700" href="mailto:{email}">{email ?? "unknown email"}</a>
 			<p class="">Phone: {phone ?? "unknown phone"}</p>
-			<p class="">DOB: {date ?? "unknown date"}</p>
+			<p class="">Registered on: {toNiceDate(date) ?? "unknown date"}</p>
 			<p class="pt-8">Character introduction:</p>
 			<p class="w-96 overflow-x-auto overflow-y-hidden whitespace-normal italic">
 				{character ?? "unknown character"}
@@ -50,14 +51,6 @@
 				placeholder="Phone"
 				id="phone"
 				name="phone" />
-			<input
-				required
-				type="date"
-				value={date}
-				class="outline-solid rounded p-2 outline-1 outline-black"
-				placeholder="Date"
-				id="date"
-				name="date" />
 			<textarea
 				required
 				type="text"

@@ -1,16 +1,14 @@
 <script>
-	let debug = false;
+	let debug = true;
 	let name;
 	let email;
 	let phone;
-	let date;
 	let character;
 
 	if (debug) {
 		name = "Superman";
 		email = "super@man.com";
 		phone = 123123;
-		date = "2023-05-05";
 		character = "This is a text";
 	}
 </script>
@@ -42,14 +40,6 @@
 				id="phone"
 				bind:value={phone}
 				name="phone" />
-			<input
-				required
-				type="date"
-				class="outline-solid rounded p-2 outline-1 outline-black"
-				placeholder="Date"
-				id="date"
-				bind:value={date}
-				name="date" />
 			<textarea
 				required
 				type="text"
