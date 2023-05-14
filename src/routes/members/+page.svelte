@@ -15,7 +15,8 @@
 		{#each data.sortAlternatives as alternative}
 			<button
 				class="font-inknut mx-2 rounded bg-emerald-700 p-2 hover:bg-emerald-500"
-				name={alternative}>{alternative}</button>
+				name="sortType"
+				value={alternative}>{alternative}</button>
 		{/each}
 	</form>
 	{#if data.members.length}

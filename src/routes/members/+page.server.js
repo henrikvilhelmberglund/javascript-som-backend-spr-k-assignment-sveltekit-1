@@ -2,6 +2,8 @@ import { membersCollection } from "$db/mongo";
 import { SHOW_CONSOLE_LOGS } from "$lib/constants";
 import { ObjectId } from "mongodb";
 
+let sortType = "Default";
+
 async function getMembers(sortType) {
 	let members = await membersCollection.find({}).toArray();
 
@@ -25,7 +27,6 @@ async function getMembers(sortType) {
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ cookies }) {
-	const sortType = cookies.get("sortType") || "Default";
 	const members = await getMembers(sortType);
 
 	if (SHOW_CONSOLE_LOGS) {
@@ -41,13 +42,19 @@ export async function load({ cookies }) {
 export const actions = {
 	sort: async ({ cookies, request }) => {
 		const data = await request.formData();
-		const sortType = data.keys().next().value;
-		cookies.set("sortType", sortType);
-		console.log("Ran sort: ", sortType);
+		sortType = data.get("sortType");
+		if (SHOW_CONSOLE_LOGS) {
+			console.log("Ran sort: ", sortType);
+		}
+
+		// if you want to get the value from the name
+		// sortType = data.keys().next().value;
 	},
 	delete: async ({ cookies, request }) => {
 		const data = await request.formData();
-		console.log(request);
+		if (SHOW_CONSOLE_LOGS) {
+			console.log(request);
+		}
 
 		const id = data.get("id");
 		const member = await membersCollection.findOne({
