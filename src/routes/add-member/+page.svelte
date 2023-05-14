@@ -1,4 +1,6 @@
 <script>
+	import { toNiceDate } from "$lib/helpers";
+
 	let debug = true;
 	let name;
 	let email;
@@ -51,7 +53,7 @@
 				class="outline-solid rounded p-2 outline-1 outline-black"
 				placeholder="Registered on"
 				id="date"
-				bind:value={date}
+				value={toNiceDate(new Date())}
 				name="date" />
 			<textarea
 				required
