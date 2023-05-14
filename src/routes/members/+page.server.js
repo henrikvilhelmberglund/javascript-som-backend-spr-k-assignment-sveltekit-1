@@ -13,15 +13,12 @@ async function getMembers(sortType) {
 			.collation({ locale: "en" })
 			.sort({ name: sortNumber })
 			.toArray();
-		members.forEach((item) => {
-			item._id = item._id.toString();
-		});
 	} else {
 		members = await membersCollection.find({}).toArray();
-		members.forEach((item) => {
-			item._id = item._id.toString();
-		});
 	}
+	members.forEach((item) => {
+		item._id = item._id.toString();
+	});
 
 	return members;
 }
