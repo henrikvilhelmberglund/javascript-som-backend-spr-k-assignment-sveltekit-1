@@ -1,6 +1,6 @@
 <footer
 	class="relative bottom-0 w-full flex-col bg-emerald-800/10 p-4 pt-6 backdrop-blur backdrop-filter">
-	<a class="font-inknut text-2xl text-blue-700 underline" href="mailto:memberlist@memberlist.com"
+	<a class="font-inknut text-2xl text-blue-700 underline" href="mailto:thefellowship@veryfancylink.com"
 		>Contact us</a>
 	<div class="font-inknut text-slate-400">
 		<p class="text-yellow-500">We are located at Fantasy Square in Ankholm. Welcome!</p>
