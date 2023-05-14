@@ -1,5 +1,5 @@
 <script>
-	import "@unocss/reset/antfu.css";
+	import "@unocss/reset/tailwind.css";
   import "@fontsource/almendra"
   import "@fontsource/inknut-antiqua"
 	import { beforeUpdate } from "svelte";
