@@ -11,14 +11,17 @@
 </svelte:head>
 
 <main class="flex-1 [&>*]:m-4">
-	<form action="?/sort" method="post">
+	<!-- <form action="?/sort" method="post"> -->
+	<div>
 		{#each data.sortAlternatives as alternative}
-			<button
+			<a
 				class="font-inknut mx-2 rounded bg-emerald-700 p-2 hover:bg-emerald-500"
 				name="sortType"
-				value={alternative}>{alternative}</button>
+				value={alternative}
+				href={`?sort=${alternative}`}>{alternative}</a>
 		{/each}
-	</form>
+	</div>
+	<!-- </form> -->
 	{#if data.members.length}
 		{#each data.members as member}
 			<div class="flex flex-row gap-10">
