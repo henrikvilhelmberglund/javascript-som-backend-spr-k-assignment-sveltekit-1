@@ -1,5 +1,4 @@
 <script>
-	import Footer from "$lib/Footer.svelte";
 	import Updated from "$lib/Updated.svelte";
 
 	export let data;
@@ -58,5 +57,3 @@
 		<!-- <p>Successfully deleted {form.deletedMember}</p> -->
 	{/if}
 </main>
-
-<Footer />
