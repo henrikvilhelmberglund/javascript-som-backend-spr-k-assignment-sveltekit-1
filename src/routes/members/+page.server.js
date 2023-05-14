@@ -72,10 +72,9 @@ export const actions = {
 		}
 		// console.log(data[0]);
 
-		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
+		const { name, email, phone, character } = Object.fromEntries(data.entries());
 
-		// this makes more sense to me
-		// const date = new Date();
+		const date = new Date(data.get("date"));
 
 		const body = {
 			name,
