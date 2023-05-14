@@ -23,7 +23,7 @@
 		<br />
 		<a
 			href="/add-member"
-			class="hover:(underline font-inknut decoration-solid) w-fit py-4 text-4xl decoration-yellow-500 decoration-1 underline-offset-[5px]"
+			class="hover:(underline font-inknut decoration-solid) w-fit py-4 block text-4xl decoration-yellow-500 decoration-1 underline-offset-[5px]"
 			>Join our adventure!</a>
 		<p>
 			If you would like to join us, feel free to add yourself as a member with your information and
