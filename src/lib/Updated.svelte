@@ -14,10 +14,9 @@
 </script>
 
 {#if show}
-	<div
-		class="absolute left-[50%] top-4 w-full translate-x-[-50%] md:top-0 md:w-fit"
-		in:fly={{ y: -20 }}>
-		<p class=" font-inknut m-4 text-yellow-500">
+	<!-- -translate-x-1/2 messes up fly transition positioning -->
+	<div in:fly={{ y: -20 }} class="fixed top-0 md:left-[40%]">
+		<p class="font-inknut m-4 text-yellow-500">
 			{text}
 			{input}!
 		</p>
