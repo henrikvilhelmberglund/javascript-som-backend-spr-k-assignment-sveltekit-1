@@ -36,14 +36,14 @@ export const actions = {
 		// console.log("data", ...data);
 		// console.log(data[0]);
 
-		const { name, email, phone, character } = Object.fromEntries(data.entries());
+		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
 		const id = data.get("id");
 
 		const member = await membersCollection.findOne({
 			_id: new ObjectId(id),
 		});
 		// get date from member's original data
-		let date = member.date;
+		// let date = member.date;
 		// date = new Date(date);
 
 		const body = {

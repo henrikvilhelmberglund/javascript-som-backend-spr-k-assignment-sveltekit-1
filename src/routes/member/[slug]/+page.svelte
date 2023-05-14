@@ -8,9 +8,8 @@
 </script>
 
 <svelte:head>
-  <title>Fellowship: {name}'s info</title>
+	<title>Fellowship: {name}'s info</title>
 </svelte:head>
-
 
 <main class="flex flex-1 flex-col justify-center pb-44 md:flex-row [&>*]:m-4">
 	<div
@@ -56,6 +55,14 @@
 				placeholder="Phone"
 				id="phone"
 				name="phone" />
+			<input
+				required
+				type="date"
+				value={toNiceDate(date)}
+				class="outline-solid rounded p-2 outline-1 outline-black"
+				placeholder="Registered on"
+				id="date"
+				name="date" />
 			<textarea
 				required
 				type="text"

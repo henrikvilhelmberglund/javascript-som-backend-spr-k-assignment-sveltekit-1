@@ -3,6 +3,7 @@
 	let name;
 	let email;
 	let phone;
+	let date;
 	let character;
 
 	if (debug) {
@@ -14,9 +15,8 @@
 </script>
 
 <svelte:head>
-  <title>Fellowship: Add member</title>
+	<title>Fellowship: Add member</title>
 </svelte:head>
-
 
 <main class="flex-1 [&>*]:m-4">
 	<form action="members?/addMember" method="POST">
@@ -45,6 +45,14 @@
 				id="phone"
 				bind:value={phone}
 				name="phone" />
+			<input
+				required
+				type="date"
+				class="outline-solid rounded p-2 outline-1 outline-black"
+				placeholder="Registered on"
+				id="date"
+				bind:value={date}
+				name="date" />
 			<textarea
 				required
 				type="text"
