@@ -8,7 +8,6 @@ import { defineConfig } from "vite";
 import presetTheme from "unocss-preset-theme";
 import { presetHeroPatterns } from "@julr/unocss-preset-heropatterns";
 import { colors } from "@unocss/preset-mini";
-import { createSafeList } from "./safelist";
 
 export default defineConfig({
 	plugins: [
@@ -18,7 +17,7 @@ export default defineConfig({
 					"bg-primary-400 outline-primary-500 outline-2 text-base-100 dark:bg-primary-700 dark:active:(bg-primary-600 translate-y-1) transition-transform active:(bg-primary-100 translate-y-1) dark:hover:bg-primary-600 hover:bg-primary-200 p-2 rounded-lg shadow-md",
 				"btn-secondary":
 					"bg-secondary-400 outline-secondary-500 outline-2 text-base-100 dark:bg-secondary-700 dark:active:(bg-secondary-600 translate-y-1)  transition-transform active:(bg-secondary-100 translate-y-1)  dark:hover:bg-secondary-600 hover:bg-secondary-200 p-2 rounded-lg shadow-md",
-      },
+			},
 			safelist: [
 				// ...Array.from({ length: 26 }, (_, i) => String.fromCharCode("a".charCodeAt(0) + i)).map(
 				// 	(char) => `font-${char}`
@@ -26,7 +25,7 @@ export default defineConfig({
 				// ...Array.from({ length: 101 }, (_, i) => `top-[${i}%]`),
 				// ...createSafeList(),
 				// `font-thin font-extralight font-light font-normal font-medium font-semibold font-bold font-extrabold font-black
-        //     btn-primary btn-secondary`,
+				//     btn-primary btn-secondary`,
 			],
 			theme: {},
 			presets: [
