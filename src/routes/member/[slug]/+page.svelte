@@ -17,7 +17,7 @@
 		in:fly={{ y: -100 }}
 		class="flex flex-col items-start justify-between gap-4 rounded-sm bg-[url('/paper.jpg')] p-12">
 		<h2 class="font-almendra text-5xl">{name ?? "unknown name"}</h2>
-		<div class="font-inknut flex flex-wrap gap-4 text-xl">
+		<div class="font-inknut flex flex-col flex-wrap gap-4 text-xl">
 			<a class="w-fit text-blue-700" href="mailto:{email}">{email ?? "unknown email"}</a>
 			<p class="">Phone: {phone ?? "unknown phone"}</p>
 			<p class="">Registered on: {toNiceDate(date) ?? "unknown date"}</p>
