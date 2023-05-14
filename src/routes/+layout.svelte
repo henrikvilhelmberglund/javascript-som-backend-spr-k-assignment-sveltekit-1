@@ -20,7 +20,7 @@
 </script>
 
 {#if show}
-	<div class="min-h-screen bg-[url(/timothy-dykes-woE5Fc1HF1o-unsplash.jpg)] bg-cover">
+	<div class="flex flex-col min-h-screen bg-[url(/timothy-dykes-woE5Fc1HF1o-unsplash.jpg)] bg-cover">
 		<header>
 			<nav class="font-inknut p-2">
 				{#each Object.entries(routes) as [name, link]}

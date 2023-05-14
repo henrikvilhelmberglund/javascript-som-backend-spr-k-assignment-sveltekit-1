@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<main class="flex-1 [&>*]:m-4">
+<main class="flex flex-col flex-1 [&>*]:m-4">
 	<h1
 		class="font-almendra inline-block bg-gradient-to-b from-slate-100 via-amber-400 to-orange-900 bg-clip-text p-4 text-5xl font-normal text-transparent md:text-6xl">
 		Welcome to the Fellowship!
