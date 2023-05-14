@@ -12,7 +12,7 @@
 
 <main class="flex-1 [&>*]:m-4">
 	<!-- <form action="?/sort" method="post"> -->
-	<div>
+	<div class="flex">
 		{#each data.sortAlternatives as alternative}
 			<a
 				class="font-inknut mx-2 rounded bg-emerald-700 p-2 hover:bg-emerald-500"
