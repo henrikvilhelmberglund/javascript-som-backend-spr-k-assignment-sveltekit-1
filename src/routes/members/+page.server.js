@@ -1,4 +1,5 @@
 import { membersCollection } from "$db/mongo";
+import { SHOW_CONSOLE_LOGS } from "$lib/constants";
 import { ObjectId } from "mongodb";
 
 async function getMembers(sortType) {
@@ -30,7 +31,9 @@ export async function load({ cookies }) {
 	const sortType = cookies.get("sortType") || "Default";
 	const members = await getMembers(sortType);
 
-	console.log("Ran load function in members route: ", members);
+	if (SHOW_CONSOLE_LOGS) {
+		console.log("Ran load function in members route: ", members);
+	}
 	return {
 		members,
 		sortAlternatives: ["Default", "Asc", "Desc"],
@@ -53,10 +56,11 @@ export const actions = {
 		const member = await membersCollection.findOne({
 			_id: new ObjectId(id),
 		});
-		console.log(member);
 
 		await membersCollection.deleteOne(member);
-		console.log("Ran delete action in members route on this member: ", member);
+		if (SHOW_CONSOLE_LOGS) {
+			console.log("Ran delete action in members route on this member: ", member);
+		}
 
 		// res.json(members);
 		// throw redirect(307, "/members");
@@ -70,10 +74,14 @@ export const actions = {
 
 		// console.log("request", request);
 		// console.log("data", data);
-		console.log("data", ...data);
+		if (SHOW_CONSOLE_LOGS) {
+			console.log("data", ...data);
+		}
 		// console.log(data[0]);
 
-		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
+		const { name, email, phone, character } = Object.fromEntries(data.entries());
+
+		const date = new Date();
 
 		const body = {
 			name,
@@ -85,8 +93,10 @@ export const actions = {
 
 		// console.log(body);
 
-    await membersCollection.insertOne(body);
-    console.log("Ran addMember action in members route on this member: ", body);
+		await membersCollection.insertOne(body);
+		if (SHOW_CONSOLE_LOGS) {
+			console.log("Ran addMember action in members route on this member: ", body);
+		}
 		// res.json(members);
 		return {
 			added: true,

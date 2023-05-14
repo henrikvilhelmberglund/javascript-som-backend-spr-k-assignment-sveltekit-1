@@ -1,4 +1,5 @@
 import { membersCollection } from "$db/mongo";
+import { SHOW_CONSOLE_LOGS } from "$lib/constants";
 import { error } from "@sveltejs/kit";
 import { ObjectId } from "mongodb";
 
@@ -16,7 +17,9 @@ export async function load({ params }) {
 	let member = await membersCollection.findOne({ _id: id });
 	member._id = member._id.toString();
 
-	console.log("Ran load function in dynamic route to load the following member: ", member);
+	if (SHOW_CONSOLE_LOGS) {
+		console.log("Ran load function in dynamic route to load the following member: ", member);
+	}
 
 	return {
 		member: member,
@@ -33,7 +36,15 @@ export const actions = {
 		// console.log("data", ...data);
 		// console.log(data[0]);
 
-		const { name, email, phone, date, character } = Object.fromEntries(data.entries());
+		const { name, email, phone, character } = Object.fromEntries(data.entries());
+		const id = data.get("id");
+
+		const member = await membersCollection.findOne({
+			_id: new ObjectId(id),
+		});
+		// get date from member's original data
+		let date = member.date;
+		// date = new Date(date);
 
 		const body = {
 			name,
@@ -43,11 +54,9 @@ export const actions = {
 			character,
 		};
 
-		const id = data.get("id");
-		const member = await membersCollection.findOne({
-			_id: new ObjectId(id),
-		});
-		console.log("Ran updateMember with the following: ", member);
+		if (SHOW_CONSOLE_LOGS) {
+			console.log("Ran updateMember with the following: ", member);
+		}
 
 		await membersCollection.updateOne(member, { $set: body });
 		// res.json(members);
